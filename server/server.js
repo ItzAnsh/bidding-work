@@ -11,7 +11,7 @@ const io = new socketIo(server, {
     }
 });
 
-mongoose.connect('mongodb://localhost:27017/socket').then(() => 
+mongoose.connect('mongodb+srv://Ansh:iZbKKbr8Sq6mgbsh@ceed-databse-events.7zoqyvb.mongodb.net/socket/?retryWrites=true&w=majority&appName=CEED-Databse-Events').then(() => 
   console.log('Connected to MongoDB')
 ).catch(err => console.error('Could not connect to MongoDB', err));
 
