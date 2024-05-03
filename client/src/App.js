@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import socketIOClient from "socket.io-client";
 
-const ENDPOINT = "http://localhost:5000";
+const ENDPOINT = "https://bidding-work-5.onrender.com/";
 const socket = socketIOClient(ENDPOINT);
 
 function App() {
