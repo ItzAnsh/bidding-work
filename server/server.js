@@ -56,7 +56,12 @@ io.on("connection", (socket) => {
 		console.log(`Received message from ${user}: ${text}`);
 		const newMessage = new Message({ room: socket.room, user, text });
 		await newMessage.save();
-		io.to(socket.room).emit("message", newMessage);
+		io.to(socket.room).emit("message", {
+			room: newMessage.room,
+			user: newMessage.user,
+			text: newMessage.text,
+			createdAt: newMessage.createdAt
+		});
 	});
 
 	socket.on("disconnect", () => {
