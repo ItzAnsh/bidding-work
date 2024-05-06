@@ -34,7 +34,7 @@ const messageSchema = new mongoose.Schema({
 
 const Message = mongoose.model("Message", messageSchema);
 
-const rooms = new Set("New Room");
+const rooms = new Set(["New Room"]);
 
 io.on("connection", (socket) => {
 	console.log("New client connected");
