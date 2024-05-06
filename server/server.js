@@ -15,12 +15,15 @@ const io = new socketIo(server, {
 // cors
 app.use(cors());
 
-mongoose
-	.connect(
+mongoose.connect(
 		"mongodb+srv://Ansh:iZbKKbr8Sq6mgbsh@ceed-databse-events.7zoqyvb.mongodb.net/socket"
 	)
 	.then(() => console.log("Connected to MongoDB"))
 	.catch((err) => console.error("Could not connect to MongoDB", err));
+
+app.get("/", (req, res) => {
+	res.json({}).status(200);
+})
 
 const messageSchema = new mongoose.Schema({
 	room: String,
