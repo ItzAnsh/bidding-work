@@ -52,6 +52,7 @@ io.on("connection", (socket) => {
 	});
 
 	socket.on("sendMessage", async (message) => {
+		console.log(message);
 		const { user, text } = message;
 		console.log(`Received message from ${user}: ${text}`);
 		const newMessage = new Message({ room: socket.room, user, text });
